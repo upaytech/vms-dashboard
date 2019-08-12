@@ -14,14 +14,14 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   }, {
-    path: '{id}',
+    path: 'volunteer/:id',
     component: VolunteerDetailComponent
   }, {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
   }, {
-    path: '*',
+    path: '**',
     component: NotFoundComponent
   }
 

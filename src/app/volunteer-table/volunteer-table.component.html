@@ -3,7 +3,7 @@
     class="ag-theme-balham"
     [rowData]="rowData" 
     [columnDefs]="columns"
-    [rowSelection]="rowSelection"
+    (rowClicked)="onRowClick($event)"
     (gridReady)="onGridReady($event)"
     pagination=true
     paginationAutoPageSize=true

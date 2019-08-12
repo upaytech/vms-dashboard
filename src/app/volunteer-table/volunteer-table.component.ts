@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { columnDefs } from './column-def';
 import { VolunteerService } from '../common/services/volunteer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-volunteer-table',
@@ -14,7 +15,7 @@ export class VolunteerTableComponent implements OnInit {
   columns = columnDefs;
   rowData: any;
   rowSelection = "multiple";
-  constructor(private volunteerService: VolunteerService) { }
+  constructor(private volunteerService: VolunteerService, private router: Router) { }
 
   ngOnInit() {
     this.rowData = this.volunteerService.getVolunteers();
@@ -25,4 +26,8 @@ export class VolunteerTableComponent implements OnInit {
     this.gridApi.sizeColumnsToFit();
   }
 
+  onRowClick(params) {
+    const id = params.data.id || 1;
+    this.router.navigate(['/volunteer', id]);
+  }
 }
