@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { VolunteerDetailComponent } from './volunteer-detail/volunteer-detail.component';
 import { VolunteerTableComponent } from './volunteer-table/volunteer-table.component';
-import { VolunteerFilterComponent } from './volunteer-filter/volunteer-filter.component';
+import { VolunteerActionsComponent } from './volunteer-filter/volunteer-actions.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { AccountComponent } from './account/account.component';
@@ -22,7 +22,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     VolunteerDetailComponent,
     VolunteerTableComponent,
-    VolunteerFilterComponent,
+    VolunteerActionsComponent,
     FooterComponent,
     HeaderComponent,
     AccountComponent,
