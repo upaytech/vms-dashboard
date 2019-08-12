@@ -4,18 +4,20 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { VolunteerDetailComponent } from './volunteer-detail/volunteer-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-
+import { AuthGuardService as AuthGuard } from './common/services/auth/auth-guard.service';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   }, {
     path: 'login',
     component: LoginComponent
   }, {
     path: 'volunteer/:id',
-    component: VolunteerDetailComponent
+    component: VolunteerDetailComponent,
+    canActivate: [AuthGuard]
   }, {
     path: '',
     redirectTo: '/home',
