@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HeaderComponent,
     AccountComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    PageHeaderComponent
   ],
   imports: [
     BrowserModule,
