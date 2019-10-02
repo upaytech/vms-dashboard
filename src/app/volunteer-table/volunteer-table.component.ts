@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { columnDefs } from './column-def';
 import { VolunteerService } from '../common/services/volunteer.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-volunteer-table',
@@ -15,10 +16,10 @@ export class VolunteerTableComponent implements OnInit {
   columns = columnDefs;
   rowData: any;
   rowSelection = "multiple";
-  constructor(private volunteerService: VolunteerService, private router: Router) { }
+  constructor(private volunteerService: VolunteerService, private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
-    this.rowData = this.volunteerService.getVolunteers();
+    this.rowData = this.http.get('http://localhost:4200/assets/volunteer.json');
   }
 
   onGridReady(params) {

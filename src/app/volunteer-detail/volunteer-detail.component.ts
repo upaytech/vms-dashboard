@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Volunteer } from '../common/model/Volunteer';
 
 @Component({
   selector: 'app-volunteer-detail',
@@ -9,7 +11,8 @@ export class VolunteerDetailComponent implements OnInit {
 
   title: string = "Volunteer Details";
 
-  constructor() { }
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }

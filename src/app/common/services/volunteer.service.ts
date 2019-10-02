@@ -6,28 +6,11 @@ import { from } from 'rxjs';
 })
 export class VolunteerService {
 
+  VOL_URL: 'http://localhost:4200/assets/volunteer.json';
+
   constructor(private http: HttpClient) { }
 
   getVolunteers() {
-    return [
-      { firstName: 'Toyota', lastName: 'Celica', zone: 'Pune', mobile: '9405674356', id: 'someID'},
-      { firstName: 'Ford', lastName: 'Mondeo', zone: 'Mouda', mobile: '8767656567' },
-      { firstName: 'Porsche', lastName: 'Boxter', zone: 'Nagpur', mobile: '8978765456' },
-      { firstName: 'Toyota', lastName: 'Celica', zone: 'Pune', mobile: '9405674356' },
-      { firstName: 'Ford', lastName: 'Mondeo', zone: 'Mouda', mobile: '8767656567' },
-      { firstName: 'Porsche', lastName: 'Boxter', zone: 'Nagpur', mobile: '8978765456' },
-      { firstName: 'Toyota', lastName: 'Celica', zone: 'Pune', mobile: '9405674356' },
-      { firstName: 'Ford', lastName: 'Mondeo', zone: 'Mouda', mobile: '8767656567' },
-      { firstName: 'Porsche', lastName: 'Boxter', zone: 'Nagpur', mobile: '8978765456' },
-      { firstName: 'Toyota', lastName: 'Celica', zone: 'Pune', mobile: '9405674356' },
-      { firstName: 'Ford', lastName: 'Mondeo', zone: 'Mouda', mobile: '8767656567' },
-      { firstName: 'Porsche', lastName: 'Boxter', zone: 'Nagpur', mobile: '8978765456' },
-      { firstName: 'Toyota', lastName: 'Celica', zone: 'Pune', mobile: '9405674356' },
-      { firstName: 'Ford', lastName: 'Mondeo', zone: 'Mouda', mobile: '8767656567' },
-      { firstName: 'Porsche', lastName: 'Boxter', zone: 'Nagpur', mobile: '8978765456' },
-      { firstName: 'Toyota', lastName: 'Celica', zone: 'Pune', mobile: '9405674356' },
-      { firstName: 'Ford', lastName: 'Mondeo', zone: 'Mouda', mobile: '8767656567' },
-      { firstName: 'Porsche', lastName: 'Boxter', zone: 'Nagpur', mobile: '8978765456' },
-    ];
+    return this.http.get(this.VOL_URL);
   }
 }

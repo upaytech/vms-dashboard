@@ -1,9 +1,8 @@
 export const columnDefs = [
     {headerName: '', checkboxSelection: true, suppressSizeToFit: true, width: 40,headerCheckboxSelection: true },
-    {headerName: 'First Name', field: 'firstName', filter: true},
-    {headerName: 'Last Name', field: 'lastName', filter: true },
+    {headerName: 'Name', field: 'name', filter: true, sortable: true},
     {headerName: 'Zone', field: 'zone', sortable: true, filter: true},
-    {headerName: 'Mobile', field: 'mobile'},
-    {headerName: 'Email', field: 'email', filter: true},
-    {headerName: 'Status', field: 'upayId', sortable: true}
+    {headerName: 'Center', field: 'center', filter: true, sortable: true},
+    {headerName: 'Email', field: 'email', filter: true, sortable: true},
+    {headerName: 'Status', field: 'upayId', sortable: true, filter: true}
 ];
