@@ -7,28 +7,29 @@
                 <img src="assets/dp.png" alt="" width="200">
 
                 <div class="basic-info">
-                        <h2>NAME SURNAME</h2>
-                        <span>UPAY ID</span>
-                        <span>Pune zone</span> 
+                        <h2>{{ volunteer.name}}</h2>
+                        <!-- <span>UPAY ID</span> -->
+                        <span>{{ volunteer.cityName | uppercase}}</span> 
                     </div>
             </div>
             <div class="info">
                 <div class="other-info">
                     <div class="personal-info">
                         <div>
-                            <b>Status: </b> New 
+                            <!-- <b>Status: </b> New  -->
                             <span>
-                                <a href="">Send confirmation link</a>
+                                <!-- <a href="">Send confirmation link</a> -->
                             </span>
                         </div>
-                        <div><b>Phone: </b> +91 9787867589</div>
-                        <div><b>Email: </b>@gmail.com</div>
-                        <div>
+                        <div><b>Phone: </b> {{ volunteer.mobile }} </div>
+                        <div><b>Email: </b> {{ volunteer.email }} </div>
+                        <!-- <div>
                             <b>Address: </b> lksnfkjfn nl knslkj nkjnkkj vn 
                             vdkj nlkdjvnlj
                             sd lkdsd nvljkds ndkj kjs  lsdjfi 
                             ljksfv kjnvlskjndd;ks
-                        </div>
+                        </div> -->
+                        <div><b>Qualification: </b> {{ volunteer.qualification }}</div>
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@ export class VolunteerTableComponent implements OnInit {
   constructor(private volunteerService: VolunteerService, private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
-    this.rowData = this.http.get('http://localhost:4200/assets/volunteer.json');
+    this.rowData = this.volunteerService.getVolunteers();
   }
 
   onGridReady(params) {

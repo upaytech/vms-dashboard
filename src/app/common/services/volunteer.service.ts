@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { from } from 'rxjs';
+import { constants } from '../constants';
+import { Volunteer } from '../model/Volunteer';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class VolunteerService {
 
-  VOL_URL: 'http://localhost:4200/assets/volunteer.json';
-
   constructor(private http: HttpClient) { }
 
   getVolunteers() {
-    return this.http.get(this.VOL_URL);
+    return this.http.get(constants.VOL_URL);
+  }
+
+  getVolunteer(id: number): Observable<Volunteer> {
+    return this.http.get<Volunteer>(constants.VOL_URL+"/"+id);
   }
 }

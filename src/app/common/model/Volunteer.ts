@@ -1,14 +1,9 @@
 export class Volunteer {
     id: string;
-    upayId: string;
     name: string;
-    age: number;
+    cityName: string;
     email: string;
-    zone: string;
-    center: string;
-    status: string;
-    address: string;
-    gender: string;
-    DOJ: Date;
-    DOB: Date;
+    mobile: string;
+    qualification: string;
 }
+    
