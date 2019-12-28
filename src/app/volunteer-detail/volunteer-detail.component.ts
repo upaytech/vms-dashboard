@@ -13,7 +13,7 @@ export class VolunteerDetailComponent implements OnInit {
   title: string = "Volunteer Details";
   public volunteer: Volunteer = new Volunteer();
 
-  constructor(private route: ActivatedRoute, private router: Router, private volunteerService: VolunteerService) { }
+  constructor(private route: ActivatedRoute, public router: Router, private volunteerService: VolunteerService) { }
 
   ngOnInit() {
     let id =  parseInt(this.route.snapshot.paramMap.get('id'));
