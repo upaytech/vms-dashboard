@@ -1,3 +1,4 @@
 export const constants = {
-    VOL_URL: "http://localhost:8080"
+    // todo: use environment specific urls
+    VOL_URL: "https://volreg.herokuapp.com"
 }
