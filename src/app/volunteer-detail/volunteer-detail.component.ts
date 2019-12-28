@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, NgZone } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Volunteer } from '../common/model/Volunteer';
 import { VolunteerService } from '../common/services/volunteer.service';
@@ -17,6 +17,10 @@ export class VolunteerDetailComponent implements OnInit {
 
   ngOnInit() {
     let id =  parseInt(this.route.snapshot.paramMap.get('id'));
+    this.setVolunteerDetails(id);
+  }
+
+  private setVolunteerDetails(id: number) {
     this.volunteerService.getVolunteer(id).subscribe(volunteer => this.volunteer = volunteer);
   }
 

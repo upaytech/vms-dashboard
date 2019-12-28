@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { columnDefs } from './column-def';
 import { VolunteerService } from '../common/services/volunteer.service';
 import { Router } from '@angular/router';
@@ -16,7 +16,7 @@ export class VolunteerTableComponent implements OnInit {
   columns = columnDefs;
   rowData: any;
   rowSelection = "multiple";
-  constructor(private volunteerService: VolunteerService, private router: Router, private http: HttpClient) { }
+  constructor(private volunteerService: VolunteerService, private ngZone: NgZone, private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
     this.rowData = this.volunteerService.getVolunteers();
@@ -29,6 +29,7 @@ export class VolunteerTableComponent implements OnInit {
 
   onRowClick(params) {
     const id = params.data.id || 1;
-    this.router.navigate(['/volunteer', id]);
+    // todo: read this https://stackoverflow.com/questions/53645534/navigation-triggered-outside-angular-zone-did-you-forget-to-call-ngzone-run
+    this.ngZone.run( () => this.router.navigate(['/volunteer', id]));
   }
 }
