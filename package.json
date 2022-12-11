@@ -29,7 +29,7 @@
     "@ngrx/store": "^8.2.0",
     "ag-grid-angular": "^21.1.0",
     "ag-grid-community": "^21.1.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "path": "^0.12.7",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
